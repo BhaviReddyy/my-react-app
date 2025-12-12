@@ -1,9 +1,10 @@
-import StatusToggle from "./StatusToggle";
+import ColorToggle from "./ColorToggle";
 
 function App() {
   return (
     <div>
-      <StatusToggle />
+      <h2>Conditional Styling Example</h2>
+      <ColorToggle />
     </div>
   );
 }

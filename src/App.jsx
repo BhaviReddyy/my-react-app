@@ -1,15 +1,13 @@
-import ColorToggle from "./ColorToggle";
+import React from "react";
+import TodosList from "./TodosList";
 
 function App() {
   return (
     <div>
-      <h2>Conditional Styling Example</h2>
-      <ColorToggle />
+      <TodosList />
     </div>
   );
 }
 
 export default App;
-
-
 

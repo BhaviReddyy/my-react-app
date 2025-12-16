@@ -1,12 +1,14 @@
-import VideoPlayer from "./VideoPlayer";
+import Component1 from "./components/Component1";
 
 function App() {
   return (
     <div>
-      <VideoPlayer />
+      <h2>Props Drilling Example</h2>
+      <Component1 />
     </div>
   );
 }
 
 export default App;
+
 

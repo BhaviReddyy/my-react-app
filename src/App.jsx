@@ -1,10 +1,9 @@
-import React from "react";
-import TodosList from "./TodosList";
+import VideoPlayer from "./VideoPlayer";
 
 function App() {
   return (
     <div>
-      <TodosList />
+      <VideoPlayer />
     </div>
   );
 }

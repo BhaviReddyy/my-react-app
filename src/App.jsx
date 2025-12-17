@@ -1,8 +1,11 @@
-import Component1 from "./components/Component1";
+import Counter from "./Counter";
 
 function App() {
-  return <Component1 />;
+  return (
+    <div>
+      <Counter />
+    </div>
+  );
 }
 
 export default App;
-

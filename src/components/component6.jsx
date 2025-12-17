@@ -1,11 +1,10 @@
+import { useContext } from "react";
+import { AppContext } from "../context/AppContext";
 
-function Component6({ e }) {
-  return (
-    <div>
-      <h3>Component 6</h3>
-      <h4>This is prop e: {e}</h4>
-    </div>
-  );
-}
+const Component6 = () => {
+  const { e } = useContext(AppContext);
+
+  return <h4>This is prop e: {e}</h4>;
+};
 
 export default Component6;

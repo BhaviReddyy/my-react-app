@@ -1,19 +1,12 @@
+import { AppProvider } from "../context/AppContext";
 import Component2 from "./Component2";
 
-function Component1() {
-  const a = "Apple";
-  const b = "Ball";
-  const c = "Cat";
-  const d = "Dog";
-  const e = "Elephant";
-  const f = "Fish";
-
+const Component1 = () => {
   return (
-    <div>
-      <h3>Component 1</h3>
-      <Component2 a={a} b={b} c={c} d={d} e={e} f={f} />
-    </div>
+    <AppProvider>
+      <Component2 />
+    </AppProvider>
   );
-}
+};
 
 export default Component1;

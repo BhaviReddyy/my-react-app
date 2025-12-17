@@ -1,8 +1,7 @@
-import Component1 from "./components/Component1";
+import Todos from "./todo-components/Todos";
 
 function App() {
-  return <Component1 />;
+  return <Todos />;
 }
 
 export default App;
-

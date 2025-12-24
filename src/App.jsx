@@ -1,41 +1,25 @@
-import React, { useState, useMemo, useCallback } from "react";
-import ProductList from "./ProductList";
+import React, { useState, Suspense } from "react";
 
-const productsData = [
-  { id: 1, name: "Laptop", price: 80000 },
-  { id: 2, name: "Mobile", price: 20000 },
-  { id: 3, name: "Tablet", price: 30000 },
-  // imagine 1000+ products...
-];
+// Lazy load the heavy component
+const HeavyComponent = React.lazy(() => import("./HeavyComponent"));
 
 export default function App() {
   const [counter, setCounter] = useState(0);
-  const [products] = useState(productsData);
-
-  // ❌ Without useMemo → recalculates every render
-  // ✔️ With useMemo → recalculates only when products change
-  const totalPrice = useMemo(() => {
-    console.log("Recalculating TOTAL PRICE...");
-    return products.reduce((sum, item) => sum + item.price, 0);
-  }, [products]);
-
-  // ❌ Without useCallback → new function created every render
-  // ✔️ With useCallback → stable function reference
-  const handleSelect = useCallback((product) => {
-    console.log("Selected product:", product.name);
-  }, []);
 
   return (
     <div style={{ padding: 20 }}>
-      <h1>React Performance Optimization</h1>
-
-      <h2>Total Price: ₹{totalPrice}</h2>
+      <h1>React.memo & Lazy Loading Demo</h1>
 
       <button onClick={() => setCounter(counter + 1)}>
         Counter: {counter}
       </button>
 
-      <ProductList products={products} onSelect={handleSelect} />
+      <hr />
+
+      <Suspense fallback={<h3>Loading Heavy Component...</h3>}>
+        <HeavyComponent />
+      </Suspense>
     </div>
   );
 }
+
